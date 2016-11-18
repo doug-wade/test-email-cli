@@ -24,6 +24,13 @@ To generate a new test email address, run `test-email generate`
     test-email generate
     > doug+2016-11-17-1@dougwade.io
 
+You may also want to pipe the results to your clipboard directly
+with [xclip](https://linux.die.net/man/1/xclip) (on Linux) or
+[pbcopy](http://ss64.com/osx/pbcopy.html)
+
+    test-email generate | xclip
+    # doug+2016-11-17-2@dougwade.io is now on the clipboard
+
 You can search old generated test emails with `test-email find`
 
     test-email find
