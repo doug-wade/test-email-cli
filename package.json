@@ -19,11 +19,11 @@
     "untildify": "^3.0.0"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
+    "ava": "^0.17.0",
     "eslint": "^3.10.2",
-    "nyc": "^9.0.1",
+    "nyc": "^10.0.0",
     "sinon": "^1.17.3",
-    "snyk": "^1.14.1"
+    "snyk": "^1.20.0"
   },
   "scripts": {
     "lint": "eslint --no-eslintrc --config .eslintrc .",

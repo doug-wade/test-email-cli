@@ -13,7 +13,7 @@ test('Lists commands properly', async t => {
   await testemailcli({ argv, logger, sub: sub({ logger }), persister: mockPersister });
 
   t.true(logger.random.called);
-  fs.readdirSync('../../sub').forEach(function (subcommand) {
+  fs.readdirSync(__dirname + '/../../sub').forEach(function (subcommand) {
     t.true(logger.random.calledWithMatch(subcommand.replace('.js', '')));
   });
 });
