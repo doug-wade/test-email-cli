@@ -29,7 +29,7 @@ module.exports = function ({ argv, config, dateProvider, logger, persister, sub 
           } else if (!argv.noUpdate && command !== 'upgrade' && Date.now() - lastUpgraded.timestamp > ONE_DAY * 30) {
             logger.info('auto-upgrading');
             opts.by = 'auto';
-            sub.run('upgrade', opts).then(() => {
+            sub.run('update', opts).then(() => {
               runCommand({ command, opts, sub }).then(resolve, reject);
             });
           } else {
