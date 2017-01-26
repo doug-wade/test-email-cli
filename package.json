@@ -1,6 +1,6 @@
 {
   "name": "test-email-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "license": "MIT",
   "repository": "https://github.com/doug-wade/test-email-cli",
