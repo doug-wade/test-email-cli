@@ -10,7 +10,7 @@ import path from 'path';
 let version;
 
 test.before(() => {
-  version = JSON.parse(fs.readFileSync('../../package.json')).version;
+  version = JSON.parse(fs.readFileSync(__dirname + '/../../package.json')).version;
 });
 
 test('Lists example package version with version command', async t => {
