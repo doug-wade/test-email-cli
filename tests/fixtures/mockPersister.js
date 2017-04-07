@@ -10,7 +10,13 @@
 module.exports = {
   readConfig: function () {
     return new Promise((resolve, reject) => {
-      resolve({ name: 'Doug Wade' });
+      resolve({
+        name: 'Doug Wade',
+        tag: 'tag',
+        shell: 'zsh',
+        email: 'douglas.b.wade@gmail.com',
+        dates: [new Date()]
+      });
     });
   },
 
