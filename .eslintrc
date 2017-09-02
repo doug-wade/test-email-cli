@@ -3,10 +3,6 @@
     "node": true,
     "es6": true
   },
-  "ecmaFeatures": {
-    "blockBindings": true,
-    "arrowFunctions": true
-  },
   "rules": {
     "array-bracket-spacing": [
       2,

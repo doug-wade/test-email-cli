@@ -4,11 +4,11 @@ const fs = require('fs');
 const libDir = __dirname;
 const path = require('path');
 
-  /**
-   * Returns the lines of the given that are top-level comments
-   * @param {String} fileName The name of the file to find comment lines for.
-   * @return {Array.<String>} An array of strings that are top-level comments
-   */
+/**
+ * Returns the lines of the given that are top-level comments
+ * @param {String} fileName The name of the file to find comment lines for.
+ * @return {Array.<String>} An array of strings that are top-level comments
+ */
 function getHelpLines(fileName) {
   const file = fs.readFileSync(path.join(libDir, fileName + '.js')).toString();
   const lines = file.split('\n');
@@ -24,11 +24,11 @@ function getHelpLines(fileName) {
   return helpLines;
 }
 
-  /**
-   * Gets the help text for a command.
-   * @param  {String} fileName The name of the command to get the help text for.
-   * @return {String}          The first line of the help text.
-   */
+/**
+ * Gets the help text for a command.
+ * @param  {String} fileName The name of the command to get the help text for.
+ * @return {String}          The first line of the help text.
+ */
 function getHelpText(fileName) {
   const helpLines = getHelpLines(fileName);
 
@@ -46,31 +46,31 @@ function getHelpText(fileName) {
   return uncommentedLines.filter((line) => !(line.replace(/\s/g, '').length < 1));
 }
 
-  /**
-   * Gets the first line of help text for a command.
-   * @param  {String} fileName The name of the command to get the help text for.
-   * @return {String}          The first line of the help text.
-   */
+/**
+ * Gets the first line of help text for a command.
+ * @param  {String} fileName The name of the command to get the help text for.
+ * @return {String}          The first line of the help text.
+ */
 function getFirstLine(fileName) {
   return getHelpText(fileName)[0];
 }
 
-  /**
-   * Returns whether or not the command is considered a "long" only command.
-   * This is determined by whether or not a top level comment contains the
-   * annotation "@kind internal".
-   * @param {String} filename The name of the command to test against.
-   * @return {boolean}        Whether or not this command is considered a "long" command
-   */
+/**
+ * Returns whether or not the command is considered a "long" only command.
+ * This is determined by whether or not a top level comment contains the
+ * annotation "@kind internal".
+ * @param {String} filename The name of the command to test against.
+ * @return {boolean}        Whether or not this command is considered a "long" command
+ */
 function isLongCommand(fileName) {
   const longTest = /.*@kind\s+internal.*/;
   const lines = getHelpLines(fileName);
   return lines.some((line) => longTest.test(line));
 }
 
-  /**
-   * Shows the help for a particular subtopic
-   */
+/**
+ * Shows the help for a particular subtopic
+ */
 function showSubHelp(logger, commands, helpSub, resolve, reject) {
   if (commands.has(helpSub)) {
     const helpText = getHelpText(helpSub);
@@ -82,9 +82,10 @@ function showSubHelp(logger, commands, helpSub, resolve, reject) {
     reject();
   }
 }
-  /**
-   * Shows the help message, which includes a brief description for each command.
-   */
+
+/**
+ * Shows the help message, which includes a brief description for each command.
+ */
 function showCommands(logger, commands, resolve, reject, showLong) {
   let commandsArr = Array.from(commands);
 
