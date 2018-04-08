@@ -19,7 +19,7 @@
     "untildify": "^3.0.0"
   },
   "devDependencies": {
-    "ava": "^0.20.0",
+    "ava": "^0.23.0",
     "eslint": "^4.6.0",
     "nyc": "^11.0.1",
     "sinon": "^4.0.0",
