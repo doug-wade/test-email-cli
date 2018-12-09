@@ -11,18 +11,18 @@
     "test-email": "./cli.js"
   },
   "dependencies": {
-    "chalk": "^2.0.0",
+    "chalk": "^2.4.1",
     "inquirer": "^6.0.0",
-    "localdate": "^3.0.0",
+    "localdate": "^3.0.2",
     "minimist": "1.2.0",
     "random-emoji": "^1.0.1",
-    "untildify": "^3.0.0"
+    "untildify": "^3.0.3"
   },
   "devDependencies": {
     "ava": "^0.25.0",
     "eslint": "^5.0.0",
-    "nyc": "^12.0.1",
-    "sinon": "^6.0.0"
+    "nyc": "^13.1.0",
+    "sinon": "^7.1.1"
   },
   "scripts": {
     "lint": "eslint .",
