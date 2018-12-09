@@ -26,7 +26,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "prepublish": "npm test && npm run lint",
+    "prepare": "npm test && npm run lint",
     "test": "nyc -x tests/ -x fixtures/ ava tests/**/*.spec.js"
   }
 }
