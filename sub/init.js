@@ -60,6 +60,12 @@ module.exports = function ({ persister, config }) {
             });
           }
         });
+
+        persister.readEmailIndex().then(emailIndex => {
+          if (!emailIndex) {
+            persister.writeEmailIndex({ emails: [] });
+          }
+        })
       }, reject);
     });
   });

@@ -37,4 +37,23 @@ module.exports = {
       resolve();
     });
   },
+
+  readEmailIndex: function() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        emails: [{
+          email: 'doug+2016-11-17-0@dougwade.io',
+          date: '2016-11-17',
+          labels: ['mine'],
+          ticket: '2',
+        }]
+      })
+    })
+  },
+
+  writeEmailIndex: function () {
+    return new Promise((resolve, reject) => {
+      resolve();
+    });
+  },
 };

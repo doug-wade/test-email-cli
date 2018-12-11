@@ -11,18 +11,18 @@ test('Run generate command correctly', async t => {
   const argv = { '_': ['generate'] };
   const logger = spyLogger();
 
-  await testemailcli({ argv, config: { email: 'doug@dougwade.io', dates: {}, isValid: () => true }, logger, sub: sub({ logger }), dateProvider: mockDateProvider, persister: mockPersister });
+  await testemailcli({ argv, config: { email: 'doug@dougwade.io', isValid: () => true }, logger, sub: sub({ logger }), dateProvider: mockDateProvider, persister: mockPersister });
 
   t.true(logger.info.calledOnce);
-  t.true(logger.info.calledWith('doug+2016-11-17-0@dougwade.io'));
+  t.true(logger.info.calledWith('doug+2016-11-17-1@dougwade.io'));
 });
 
 test('Run generate command using its alias', async t => {
   const argv = { '_': ['g'] };
   const logger = spyLogger();
 
-  await testemailcli({ argv, config: { email: 'doug@dougwade.io', dates: { '2016-11-17': [{ email: 'doug+2016-11-17-1@dougwade.io', date: '2016-11-17' }]}, isValid: () => true }, logger, sub: sub({ logger }), dateProvider: mockDateProvider, persister: mockPersister });
-
+  await testemailcli({ argv, config: { email: 'doug@dougwade.io', isValid: () => true }, logger, sub: sub({ logger }), dateProvider: mockDateProvider, persister: mockPersister });
+  
   t.true(logger.info.calledOnce);
   t.true(logger.info.calledWith('doug+2016-11-17-1@dougwade.io'));
 });
