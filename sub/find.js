@@ -13,13 +13,13 @@ module.exports = function ({ argv, config, logger, persister }) {
       const { emails } = emailIndex;
       const results = emails
         .filter(email => {
-          if(!argv.date) {
+          if (!argv.date) {
             return true;
           }
           return argv.date === email.date;
         })
         .filter(email => {
-          if(!argv.ticket) {
+          if (!argv.ticket) {
             return true;
           }
           return email.ticket === argv.ticket;

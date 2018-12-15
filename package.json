@@ -27,6 +27,7 @@
   "scripts": {
     "lint": "eslint .",
     "prepare": "npm test && npm run lint",
-    "test": "nyc -x tests/ -x fixtures/ ava tests/**/*.spec.js"
+    "test": "nyc -x tests/ -x fixtures/ ava tests/**/*.spec.js",
+    "ci": "nyc -x tests/ -x fixtures/ ava --serial tests/**/*.spec.js"
   }
 }

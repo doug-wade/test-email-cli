@@ -11,11 +11,10 @@ module.exports = {
   readConfig: function () {
     return new Promise((resolve, reject) => {
       resolve({
-        name: 'Doug Wade',
+        repo: '/Users/dwade/foss/test-email-cli',
         tag: 'tag',
         shell: 'zsh',
-        email: 'douglas.b.wade@gmail.com',
-        dates: [new Date()]
+        email: 'douglas.b.wade@gmail.com'
       });
     });
   },
