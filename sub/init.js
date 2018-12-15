@@ -35,7 +35,6 @@ module.exports = function ({ persister, config }) {
       Object.keys(answers).forEach((key) => {
         config[key] = answers[key];
       });
-      config.dates = config.dates || {};
       persister.writeConfig(config).then(() => {
         let command = 'source ';
         let profile;
@@ -58,6 +57,12 @@ module.exports = function ({ persister, config }) {
                 resolve();
               }
             });
+          }
+        });
+
+        persister.readEmailIndex().then(emailIndex => {
+          if (!emailIndex) {
+            persister.writeEmailIndex({ emails: [] });
           }
         });
       }, reject);

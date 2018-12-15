@@ -12,13 +12,12 @@ module.exports = function ({ argv, config, logger, dateProvider, persister }) {
     const date = dateProvider().toString();
     const [user, domain] = config.email.split('@');
 
-    if (!config.dates[date]) {
-      config.dates[date] = [];
-    }
-
-    const email = `${user}+${date}-${config.dates[date].length.toString(36)}@${domain}`;
-    config.dates[date].push({ email, date, ticket: argv.ticket });
-    logger.info(email);
-    persister.writeConfig(config).then(resolve, reject);
+    persister.readEmailIndex().then(emailIndex => {
+      const todaysEmails = emailIndex.emails.filter(email => email.date === date);
+      const email = `${user}+${date}-${todaysEmails.length.toString(36)}@${domain}`;
+      emailIndex.emails.push({ email, date, ticket: argv.ticket });
+      logger.info(email);
+      persister.writeEmailIndex(emailIndex).then(resolve, reject);
+    });
   });
 };
