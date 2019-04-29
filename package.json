@@ -16,7 +16,7 @@
     "localdate": "^3.0.2",
     "minimist": "1.2.0",
     "random-emoji": "^1.0.1",
-    "untildify": "^3.0.3"
+    "untildify": "^4.0.0"
   },
   "devDependencies": {
     "ava": "^1.0.1",
