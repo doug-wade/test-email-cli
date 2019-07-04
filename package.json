@@ -16,7 +16,8 @@
     "localdate": "^3.0.2",
     "minimist": "1.2.0",
     "random-emoji": "^1.0.1",
-    "untildify": "^3.0.3"
+    "untildify": "^3.0.3",
+    "snyk": "^1.192.0"
   },
   "devDependencies": {
     "ava": "^1.0.1",
@@ -26,8 +27,10 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "prepare": "npm test && npm run lint",
+    "prepare": "npm run snyk-protect; npm test && npm run lint",
     "test": "nyc -x tests/ -x fixtures/ ava tests/**/*.spec.js",
-    "ci": "nyc -x tests/ -x fixtures/ ava --serial tests/**/*.spec.js"
-  }
+    "ci": "nyc -x tests/ -x fixtures/ ava --serial tests/**/*.spec.js",
+    "snyk-protect": "snyk protect"
+  },
+  "snyk": true
 }
