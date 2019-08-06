@@ -22,7 +22,7 @@
     "ava": "^1.0.1",
     "eslint": "^5.0.0",
     "nyc": "^14.0.0",
-    "sinon": "^7.1.1"
+    "sinon": "^7.4.1"
   },
   "scripts": {
     "lint": "eslint .",
