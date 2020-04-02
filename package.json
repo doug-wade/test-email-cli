@@ -11,7 +11,7 @@
     "test-email": "./cli.js"
   },
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^4.0.0",
     "inquirer": "^6.0.0",
     "localdate": "^3.0.2",
     "minimist": "1.2.0",
